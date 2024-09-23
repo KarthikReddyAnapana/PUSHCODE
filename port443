@@ -1,0 +1,27 @@
+nano ~/.ssh/config
+Run this in your terminal....
+
+Add a New Configuration for GitHub:
+
+Inside the file, add the following configuration:
+bash
+Copy code
+Host github.com
+    Hostname ssh.github.com
+    Port 443
+This configuration tells your system to connect to GitHub’s SSH service on port 443 instead of the default port 22.
+Save the File:
+
+Press CTRL + X to exit, then Y to confirm saving, and Enter to confirm the filename.
+Step 2: Test SSH Connection on Port 443
+To verify that the changes were successful, run the following command:
+
+bash
+Copy code
+ssh -T git@github.com
+If the setup is correct, you should see a message like:
+
+vbnet
+Copy code
+Hi username! You've successfully authenticated, but GitHub does not provide shell access.
+This means SSH is now using port 443 to connect to GitHub.
